@@ -30,13 +30,13 @@ else:
                 "pyperclip @ git+https://github.com/xfangfang/pyperclip.git"]
 
 setup(
-    name="macast",
+    name="macast2",
     version=VERSION,
-    author="xfangfang",
-    author_email="xfangfang@126.com",
+    author="isdkz",
+    author_email="isdkz@outlook.com",
     description="a DLNA Media Renderer",
     license="GPL3",
-    url="https://github.com/xfangfang/Macast",
+    url="https://github.com/isdkz/Macast2",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
     classifiers=["Topic :: Multimedia :: Sound/Audio",
