@@ -9,6 +9,7 @@ import http.client
 import logging
 import cherrypy
 import threading
+from urllib.parse import urlparse, urlunparse
 
 import requests
 from lxml import etree
@@ -575,6 +576,14 @@ class DLNAProtocol(Protocol):
         param = {}
         for node in root:
             param[node.tag] = node.text
+        if "CurrentURI" in param:
+            parsed = urlparse(param["CurrentURI"])
+            _ = parsed.netloc.split(":")
+            ip = _[0]
+            if ip == "127.0.0.1":
+                _[0] = cherrypy.request.remote.ip
+                new_parsed = parsed._replace(netloc=':'.join(_))
+                param["CurrentURI"] = urlunparse(new_parsed)
         action = root.tag.split('}')[1]
         service = root.tag.split(":")[3]
         method = "{}_{}".format(service, action)
