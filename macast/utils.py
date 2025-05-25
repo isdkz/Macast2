@@ -13,7 +13,7 @@ import locale
 import cherrypy
 import subprocess
 from enum import Enum
-import netifaces as ni
+import psutil
 
 if sys.platform == 'darwin':
     from AppKit import NSBundle
@@ -23,7 +23,7 @@ elif sys.platform == 'win32':
 
 logger = logging.getLogger("Utils")
 DEFAULT_PORT = 0
-SETTING_DIR = appdirs.user_config_dir('Macast', 'xfangfang')
+SETTING_DIR = appdirs.user_config_dir('Macast2', 'isdkz')
 PROTOCOL_DIR = 'protocol'
 RENDERER_DIR = 'renderer'
 
@@ -142,31 +142,30 @@ class Setting:
 
     @staticmethod
     def get_ip():
-        last_ip = []
-        gateways = ni.gateways()  # {type: [{ip, interface, default},{},...], type: []}
+        last_ip = set()
         interfaces = set(Setting.get(SettingProperty.Additional_Interfaces, []))
-        interface_type = [ni.AF_INET, ni.AF_LINK]
-        for t in interface_type:
-            if t in gateways:
-                for i in gateways[t]:
-                    if len(i) > 1:
-                        interfaces.add(i[1])
-        for i in Setting.get(SettingProperty.Blocked_Interfaces, []):
-            if i in interfaces:
-                interfaces.remove(i)
-        logger.debug(interfaces)
-        for i in interfaces:
-            try:
-                iface = ni.ifaddresses(i)
-            except ValueError as e:
-                continue
-            if ni.AF_INET in iface:
-                for j in iface[ni.AF_INET]:
-                    if 'addr' in j and 'netmask' in j:
-                        last_ip.append((j['addr'], j['netmask']))
-        Setting.last_ip = set(last_ip)
-        logger.debug(Setting.last_ip)
-        return Setting.last_ip
+        blocked_interfaces = set(Setting.get(SettingProperty.Blocked_Interfaces, []))
+
+        # 获取所有网络接口信息
+        addrs = psutil.net_if_addrs()
+        stats = psutil.net_if_stats()
+
+        # 过滤活动接口（类似网关逻辑）
+        active_interfaces = [iface for iface, status in stats.items() if status.isup]
+        interfaces.update(active_interfaces)
+
+        # 移除被屏蔽的接口
+        interfaces -= blocked_interfaces
+
+        # 提取 IPv4 地址和子网掩码
+        for iface in interfaces:
+            if iface in addrs:
+                for addr in addrs[iface]:
+                    if addr.family == psutil.socket.AF_INET:
+                        last_ip.add((addr.address, addr.netmask))
+
+        Setting.last_ip = last_ip
+        return last_ip
 
     @staticmethod
     def get_port():
