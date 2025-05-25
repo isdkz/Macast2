@@ -1,4 +1,4 @@
-<img align="center" src="Macast_slogan.png" alt="slogan" height="auto"/>
+<img align="center" src="macast2_slogan.png" alt="slogan" height="auto"/>
 
 # Macast2
 
@@ -71,10 +71,10 @@ If this does not solve your problem, please open a new issue to notify us, we ar
 ## Screenshots
 
 You can copy the video link after the video is casted：  
-<img align="center" width="400" src="https://github.com/xfangfang/xfangfang.github.io/raw/master/assets/img/Macast/copy_uri.png" alt="copy_uri" height="auto"/>
+<img align="center" width="400" src="https://raw.githubusercontent.com/xfangfang/xfangfang.github.io/master/assets/img/macast/select_renderer.png" alt="copy_uri" height="auto"/>
 
 Or select a third-party player plug-in  
-<img align="center" width="400" src="https://github.com/xfangfang/xfangfang.github.io/raw/master/assets/img/Macast/select_renderer.png" alt="select_renderer" height="auto"/>
+<img align="center" width="400" src="https://raw.githubusercontent.com/xfangfang/xfangfang.github.io/master/assets/img/macast/select_renderer.png" alt="select_renderer" height="auto"/>
 
 ## Relevant links
 

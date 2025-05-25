@@ -1,4 +1,4 @@
-<img align="center" src="Macast_slogan.png" alt="slogan" height="auto"/>
+<img align="center" src="macast2_slogan.png" alt="slogan" height="auto"/>
 
 # Macast2
 
