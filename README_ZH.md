@@ -1,18 +1,15 @@
-<img align="center" src="macast_slogan.png" alt="slogan" height="auto"/>
+<img align="center" src="Macast2_slogan.png" alt="slogan" height="auto"/>
 
-# Macast
+# Macast2
 
-[![visitor](https://visitor-badge.glitch.me/badge?page_id=xfangfang.Macast)](https://github.com/xfangfang/Macast/releases/latest)
-[![stars](https://img.shields.io/badge/dynamic/json?label=github%20stars&query=stargazers_count&url=https%3A%2F%2Fapi.github.com%2Frepos%2Fxfangfang%2FMacast)](https://github.com/xfangfang/Macast)
-[![plugins](https://shields-staging.herokuapp.com/github/directory-file-count/xfangfang/Macast-plugins?type=dir&label=plugins)](https://github.com/xfangfang/Macast-plugins)
-[![build](https://img.shields.io/github/workflow/status/xfangfang/Macast/Build%20Macast)](https://github.com/xfangfang/Macast/actions/workflows/build-macast.yaml)
-[![mac](https://img.shields.io/badge/MacOS-10.14%20and%20higher-lightgrey?logo=Apple)](https://github.com/xfangfang/Macast/releases/latest)
-[![windows](https://img.shields.io/badge/Windows-10-lightgrey?logo=Windows)](https://github.com/xfangfang/Macast/releases/latest)
-[![linux](https://img.shields.io/badge/Linux-Xorg-lightgrey?logo=Linux)](https://github.com/xfangfang/Macast/releases/latest)
+[![visitor](https://visitor-badge.glitch.me/badge?page_id=.Macast2)](https://github.com//Macast2/releases/latest)
+[![stars](https://img.shields.io/badge/dynamic/json?label=github%20stars&query=stargazers_count&url=https%3A%2F%2Fapi.github.com%2Frepos%2F%2FMacast2)](https://github.com//Macast2)
+[![plugins](https://shields-staging.herokuapp.com/github/directory-file-count//Macast2-plugins?type=dir&label=plugins)](https://github.com/isdkz/Macast2-plugins)
+[![build](https://img.shields.io/github/workflow/status//Macast2/Build%20Macast2)](https://github.com//Macast2/actions/workflows/build-Macast2.yaml)
 
 [README_EN](README.md)
 
-Macast是一个跨平台的 **菜单栏\状态栏** 应用，用户可以使用电脑接收发送自手机的视频、图片和音乐，支持主流视频音乐软件和其他任何符合DLNA协议的投屏软件。
+Macast2是一个跨平台的 **菜单栏\状态栏** 应用，用户可以使用电脑接收发送自手机的视频、图片和音乐，支持主流视频音乐软件和其他任何符合DLNA协议的投屏软件。
 
 
 😂 **请尽量使用英语在Github交流，如果喜欢的话可以点个star关注后续更多协议支持的更新**
@@ -25,32 +22,32 @@ Macast是一个跨平台的 **菜单栏\状态栏** 应用，用户可以使用�
 
 - ### MacOS || Windows || Debian
 
-  下载地址1:  [Macast 最新正式版 github下载](https://github.com/xfangfang/Macast/releases/latest)
+  下载地址1:  [Macast2 最新正式版 github下载](https://github.com//Macast2/releases/latest)
 
-  下载地址2:  [Macast 最新正式版 gitee下载（上面访问无效可使用此备用链接）](https://gitee.com/xfangfang/Macast/releases/)
+  下载地址2:  [Macast2 最新正式版 gitee下载（上面访问无效可使用此备用链接）](https://gitee.com//Macast2/releases/)
 
 - ### 包管理
-  你也可以使用包管理器安装macast  
+  你也可以使用包管理器安装Macast2  
   ```shell
   # 需要 python>=3.6
-  pip install macast
+  pip install Macast2
   ```
 
-  请查看我们的wiki页面获取更多的包管理相关信息（如：aur）: [Macast/wiki/Installation#package-manager](https://github.com/xfangfang/Macast/wiki/Installation#package-manager)  
+  请查看我们的wiki页面获取更多的包管理相关信息（如：aur）: [Macast2/wiki/Installation#package-manager](https://github.com//Macast2/wiki/Installation#package-manager)  
   Linux用户使用包管理器安装时运行可能会有问题，建议替换如下两个库为我修改过的库（分别负责`菜单显示`与`文本复制`）：
 
   ```shell
-  pip install git+https://github.com/xfangfang/pystray.git
-  pip install git+https://github.com/xfangfang/pyperclip.git
+  pip install git+https://github.com//pystray.git
+  pip install git+https://github.com//pyperclip.git
   ```
 
-  **Linux用户如果安装或运行有问题，可以查看 [这里](https://github.com/xfangfang/Macast/wiki/Installation#linux)**
+  **Linux用户如果安装或运行有问题，可以查看 [这里](https://github.com//Macast2/wiki/Installation#linux)**
 
 - ### 从源码构建或运行
 
-  构建请参阅: [Macast Development](docs/Development.md) 和 [build-macast.yaml](https://github.com/xfangfang/Macast/blob/main/.github/workflows/build-macast.yaml)
+  构建请参阅: [Macast2 Development](docs/Development.md) 和 [build-Macast2.yaml](https://github.com//Macast2/blob/main/.github/workflows/build-Macast2.yaml)
   
-  运行只需要clone仓库，根据不同的操作系统于requirements文件中安装相关的包，并在项目根目录运行 `Macast.py` 即可。
+  运行只需要clone仓库，根据不同的操作系统于requirements文件中安装相关的包，并在项目根目录运行 `Macast2.py` 即可。
 
 
 
@@ -60,15 +57,15 @@ Macast是一个跨平台的 **菜单栏\状态栏** 应用，用户可以使用�
   1. 打开应用后，**菜单栏 \ 状态栏 \ 任务栏** 会出现一个图标，这时你的设备就可以接收来自同一局域网的DLNA投放了。
 
 - **进阶用户**  
-  1. 通过手动加载 [Macast插件](https://gitee.com/xfangfang/Macast-plugins), Macast可以支持调用其他播放器，如：IINA、PotPlayer等等，或适配国内各家私有的DLNA协议. 
+  1. 通过手动加载 [Macast2插件](https://gitee.com//Macast2-plugins), Macast2可以支持调用其他播放器，如：IINA、PotPlayer等等，或适配国内各家私有的DLNA协议. 
   2. 在应用内点击高级设置，可以直接在内置的插件商店中快速下载插件（使用github仓库地址，如果网络条件不好刷新不出来，那么还是通过手动加载的方式下载吧）
-  3. 支持修改默认播放器的快捷键或其他参数，见：[#how-to-set-personal-configurations-to-mpv](https://github.com/xfangfang/Macast/wiki/FAQ#how-to-set-personal-configurations-to-mpv)
+  3. 支持修改默认播放器的快捷键或其他参数，见：[#how-to-set-personal-configurations-to-mpv](https://github.com//Macast2/wiki/FAQ#how-to-set-personal-configurations-to-mpv)
 
 - **程序员**  
-  1. 可以依照教程完成自己的脚本，快速地适配到你喜欢的播放器，或者增加一些新的功能插件，比如：边下边看，自动复制视频链接等等。教程和一些示例代码在：[Macast/wiki/Custom-Renderer](https://github.com/xfangfang/Macast/wiki/Custom-Renderer)  
-  2. 也可以参考 [nirvana](https://github.com/xfangfang/Macast-plugins/tree/main/nirvana) 快速适配第三方魔改的DLNA协议。
+  1. 可以依照教程完成自己的脚本，快速地适配到你喜欢的播放器，或者增加一些新的功能插件，比如：边下边看，自动复制视频链接等等。教程和一些示例代码在：[Macast2/wiki/Custom-Renderer](https://github.com//Macast2/wiki/Custom-Renderer)  
+  2. 也可以参考 [nirvana](https://github.com//Macast2-plugins/tree/main/nirvana) 快速适配第三方魔改的DLNA协议。
 
-欢迎大家提交代码到[Macast插件](https://github.com/xfangfang/Macast-plugins)。  
+欢迎大家提交代码到[Macast2插件](https://github.com//Macast2-plugins)。  
 **注意：不要轻易加载非官方仓库下载的插件，这里“插件”本身是可以运行在电脑上的任意代码，不建议加载非官方提供的插件。**
 
 
@@ -89,19 +86,19 @@ Macast是一个跨平台的 **菜单栏\状态栏** 应用，用户可以使用�
 ## 出现问题的可能原因及解决办法（更详细内容见项目的wiki）
 
 0. 应用闪退  
-    大概率是由windows的hyper-v占用端口号导致的，建议修改hyper-v占用的端口号范围或修改本应用的启动端口号（[Macast配置文件位置](https://github.com/xfangfang/Macast/wiki/FAQ#where-is-the-configuration-file-located)）
-2. 无法搜索到Macast——被电脑防火墙拦截  
+    大概率是由windows的hyper-v占用端口号导致的，建议修改hyper-v占用的端口号范围或修改本应用的启动端口号（[Macast2配置文件位置](https://github.com//Macast2/wiki/FAQ#where-is-the-configuration-file-located)）
+2. 无法搜索到Macast2——被电脑防火墙拦截  
     手机尝试访问 http://电脑ip:1068，如:192.168.1.123:1068 如果出现helloworld 等字样排除问题。  
     *具体端口号见应用菜单设置的第一项，如果没有则为默认的1068*
-2. 无法搜索到Macast——路由器问题  
+2. 无法搜索到Macast2——路由器问题  
     路由器需要开启UPnP，关闭ap隔离，确认固件正常（部分openwrt有可能有问题）
-4. 无法搜索到Macast——手机软件有问题  
+4. 无法搜索到Macast2——手机软件有问题  
     可以重启软件或更换软件尝试，或向其他投屏接收端电视测试
     尝试在搜索页面等待久一点（最多1分钟如果搜不到那应该就是别的问题了）
     如操作系统为IOS，注意要开启软件的**本地网络发现**权限
-5. 无法搜索到Macast——网络问题  
+5. 无法搜索到Macast2——网络问题  
     请确定手机和电脑处在同一网段下，比如说：电脑连接光猫的网线，手机连接路由器wifi，这种情况大概率是不在同一网段的，可以查看手机和电脑的ip前缀是否相同。
-6. 无法搜索到Macast——其他未知问题  
+6. 无法搜索到Macast2——其他未知问题  
     尝试在同一局域网手机投电视，如果可以正常投说明问题还是出在电脑端，继续检查电脑问题或查看如何报告bug
 
 ## 对于反馈问题的说明
@@ -113,33 +110,33 @@ Macast是一个跨平台的 **菜单栏\状态栏** 应用，用户可以使用�
   5. 如果你不能自己去写，请不要提出那种很难实现的需求，开发者愿意解决的是：“我有个需求，讨论一下要怎么实现” 而不是 “可以帮我给这个软件加上***功能吗？”
 
 ## 如何报告bug
-  准备以下信息，推荐到Github报告问题，点击 **[new issue](https://github.com/xfangfang/Macast/issues/new/choose)** 去反馈问题：
+  准备以下信息，推荐到Github报告问题，点击 **[new issue](https://github.com//Macast2/issues/new/choose)** 去反馈问题：
   1. 你的电脑系统类型和版本：如Win10 20h2
   2. 你使用的手机系统和软件：如 安卓 bilibili
   3. bug复现：如何复现bug与bug是否可以稳定复现
   4. 程序运行的log（复现问题时候的log）：  
-    - windows下载debug版应用, 拖入cmd执行，复现问题后，关闭应用，ctrl-a全选复制：[download debug](https://github.com/xfangfang/Macast/releases/latest)  
-    - mac 终端输入：`/Applications/Macast.app/Contents/MacOS/Macast` 回车运行，复现问题后，关闭应用，复制log  
-    - linux 安装deb后，命令行运行 `macast` \\ 或直接从源码运行 \\ 或包管理安装后命令行运行 `macast-cli`，复现问题后，关闭应用，复制log  
+    - windows下载debug版应用, 拖入cmd执行，复现问题后，关闭应用，ctrl-a全选复制：[download debug](https://github.com//Macast2/releases/latest)  
+    - mac 终端输入：`/Applications/Macast2.app/Contents/MacOS/Macast2` 回车运行，复现问题后，关闭应用，复制log  
+    - linux 安装deb后，命令行运行 `Macast2` \\ 或直接从源码运行 \\ 或包管理安装后命令行运行 `Macast2-cli`，复现问题后，关闭应用，复制log  
 
 ## 用户反馈
 
 点击链接加入群聊【小方的软件工地】：[983730955](https://jq.qq.com/?_wv=1027&k=4ioK8gQs)
 
-当然也可以考虑捐赠 ~~获得贵宾售后服务（开玩笑）~~ 支持Macast和他的开发者们为了这个软件熬过的日日夜夜
+当然也可以考虑捐赠 ~~获得贵宾售后服务（开玩笑）~~ 支持Macast2和他的开发者们为了这个软件熬过的日日夜夜
 
 <img align="center" width="400" src="sponsorships.png" alt="sponsorships" height="auto"/>
 
 <img align="center" width="400" src="https://service-65diwogz-1252652631.bj.apigw.tencentcs.com/release/sponsor.svg" alt="sponsors" height="auto"/>
 
 ## 使用截图
-*如果系统设置为中文，Macast会自动切换中文界面*  
+*如果系统设置为中文，Macast2会自动切换中文界面*  
 
 在投放视频或其他媒体文件后，可以点击应用图标复制媒体下载链接  
-<img align="center" width="400" src="https://gitee.com/xfangfang/xfangfang/raw/master/assets/img/macast/copy_uri.png" alt="copy_uri" height="auto"/>
+<img align="center" width="400" src="https://gitee.com///raw/master/assets/img/Macast2/copy_uri.png" alt="copy_uri" height="auto"/>
 
 支持选择第三方播放器  
-<img align="center" width="400" src="https://gitee.com/xfangfang/xfangfang/raw/master/assets/img/macast/select_renderer.png" alt="select_renderer" height="auto"/>
+<img align="center" width="400" src="https://gitee.com///raw/master/assets/img/Macast2/select_renderer.png" alt="select_renderer" height="auto"/>
 
 
 ## 相关链接
