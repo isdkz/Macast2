@@ -1,4 +1,4 @@
-<img align="center" src="Macast2_slogan.png" alt="slogan" height="auto"/>
+<img align="center" src="Macast_slogan.png" alt="slogan" height="auto"/>
 
 # Macast2
 
@@ -133,10 +133,10 @@ Macast2是一个跨平台的 **菜单栏\状态栏** 应用，用户可以使用
 *如果系统设置为中文，Macast2会自动切换中文界面*  
 
 在投放视频或其他媒体文件后，可以点击应用图标复制媒体下载链接  
-<img align="center" width="400" src="https://gitee.com///raw/master/assets/img/Macast2/copy_uri.png" alt="copy_uri" height="auto"/>
+<img align="center" width="400" src="https://gitee.com///raw/master/assets/img/Macast/copy_uri.png" alt="copy_uri" height="auto"/>
 
 支持选择第三方播放器  
-<img align="center" width="400" src="https://gitee.com///raw/master/assets/img/Macast2/select_renderer.png" alt="select_renderer" height="auto"/>
+<img align="center" width="400" src="https://gitee.com///raw/master/assets/img/Macast/select_renderer.png" alt="select_renderer" height="auto"/>
 
 
 ## 相关链接
