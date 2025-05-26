@@ -4,6 +4,7 @@
 name: test action
 
 on: 
+  workflow_dispatch:
 
 jobs:
   shell:
