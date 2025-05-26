@@ -3,7 +3,6 @@ This is a setup.py script
 
 """
 
-import os
 import sys
 from setuptools import setup, find_packages
 
