@@ -190,14 +190,17 @@ jobs:
 
       - name: Install Requirement
         run: |
-          python3 -m pip install -r requirements/darwin.txt
-          python3 -m pip install py2app
+          python3 -m venv venv
+          source venv/bin/activate
+          pip3 install -r requirements/darwin.txt
+          pip3 install py2app
           wget https://laboratory.stolendata.net/~djinn/mpv_osx/mpv-latest.tar.gz
           mkdir -p bin && tar --strip-components 2 -C bin -xzvf mpv-latest.tar.gz mpv.app/Contents/MacOS
 
       - name: Build
         id: compile
         run: |
+          source venv/bin/activate
           for file in i18n/*; do msgfmt -o $file/LC_MESSAGES/macast.mo $file/LC_MESSAGES/macast.po;echo $file;done
           python3 setup_py2app.py py2app --arch=x86_64
           cp -R bin dist/Macast.app/Contents/Resources/
