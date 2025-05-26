@@ -1,0 +1,37 @@
+# Copyright (c) 2021 by xfangfang. All Rights Reserved.
+
+
+name: test action
+
+on:
+  workflow_dispatch:
+    inputs:
+      ssh_darwin:
+        description: 'SSH connection to Darwin'
+        required: false
+        default: 'false'
+      ssh_ubuntu:
+        description: 'SSH connection to Ubuntu'
+        required: false
+        default: 'false'
+      release:
+        description: 'Push a new release'
+        required: false
+        default: 'false'
+
+jobs:
+  shell:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+
+      - uses: shaowenchen/debugger-action@v1
+        name: debugger
+        timeout-minutes: 30
+        continue-on-error: true
+        with:
+          frp_server_addr: ${{ secrets.FRP_SERVER_ADDR }}
+          frp_server_port: ${{ secrets.FRP_SERVER_PORT }}
+          frp_token: ${{ secrets.FRP_TOKEN }}
+          ssh_port: 29003
