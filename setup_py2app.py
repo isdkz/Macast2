@@ -14,14 +14,14 @@ DATA_FILES = ['i18n']
 VERSION = "0.1.0"
 with open('macast/.version', 'r') as f:
     VERSION = f.read().strip()
-copyright = 'Copyright {} xfangfang and the Macast contributors.'.format(datetime.datetime.now().year)
+copyright = 'Copyright {} isdkz and the Macast contributors.'.format(datetime.datetime.now().year)
 OPTIONS = {
     'argv_emulation': True,
     'plist': {
         'LSUIElement': True,
         'NSHighResolutionCapable': True,
         'LSMinimumSystemVersion': '10.12.0',
-        'CFBundleIdentifier': 'cn.xfangfang.Macast',
+        'CFBundleIdentifier': 'cn.isdkz.Macast',
         'NSHumanReadableCopyright': copyright,
         'CFBundleShortVersionString': str(VERSION),
         'CFBundleVersion': str(VERSION),

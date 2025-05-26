@@ -1,4 +1,4 @@
-# Copyright (c) 2021 by xfangfang. All Rights Reserved.
+# Copyright (c) 2025 by isdkz. All Rights Reserved.
 
 import os
 import re
@@ -344,8 +344,8 @@ class Macast(App):
         self.service.run_async()
 
     def check_update(self, verbose=True):
-        release_url = 'https://github.com/xfangfang/Macast/releases/latest'
-        api_url = 'https://api.github.com/repos/xfangfang/Macast/releases/latest'
+        release_url = 'https://github.com/isdkz/Macast2/releases/latest'
+        api_url = 'https://api.github.com/repos/isdkz/Macast2/releases/latest'
         try:
             res = json.loads(requests.get(api_url).text)
             online_version = re.findall(r'(\d+\.*\d+)', res['tag_name'])[0]

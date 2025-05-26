@@ -6,7 +6,7 @@
 # Copyright (C) 2006 Fluendo, S.A. (www.fluendo.com).
 # Copyright 2006,2007,2008,2009 Frank Scholz <coherence@beebits.net>
 # Copyright 2016 Erwan Martin <public@fzwte.net>
-# Copyright 2021 FangYuecheng <github.com/xfangfang>
+# Copyright 2021 FangYuecheng <github.com/isdkz>
 #
 # Implementation of a SSDP server.
 #

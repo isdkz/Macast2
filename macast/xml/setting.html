@@ -51,7 +51,7 @@
         <el-tab-pane label="Log" name="3">
             <span>This page does not display all logs. If you want to view all logs, please run from the source code or refer to </span>
             <el-link type="primary"
-                     href="https://github.com/xfangfang/Macast/blob/main/.github/ISSUE_TEMPLATE/bug_report.md"
+                     href="https://github.com/isdkz/Macast2/blob/main/.github/ISSUE_TEMPLATE/bug_report.md"
                      target="_blank">this instruction.
             </el-link>
             <br/>
@@ -63,17 +63,17 @@
             <h1>FAQ</h1>
 
             <el-link type="primary"
-                     href="https://github.com/xfangfang/Macast/wiki/FAQ"
+                     href="https://github.com/isdkz/Macast2/wiki/FAQ"
                      target="_blank">This document may not be the latest
                 version. Please visit the Macast Wiki for the latest document.
             </el-link>
 
             <p>Macast is still in the early stage of development, so it may not be available on your device. In
                 this case, please try the
-                <el-link type="primary" href='https://github.com/xfangfang/Macast/actions'>beta version</el-link>
+                <el-link type="primary" href='https://github.com/isdkz/Macast2/actions'>beta version</el-link>
                 or
                 submit a
-                <el-link type="primary" href='https://github.com/xfangfang/Macast/issues/new/choose'>issue</el-link>
+                <el-link type="primary" href='https://github.com/isdkz/Macast2/issues/new/choose'>issue</el-link>
                 to help us do better.
             </p>
             <h2 id='i-dont-know-how-to-use'>I don&#39;t know how to use</h2>
@@ -84,8 +84,8 @@
             <h2 id='how-to-use-third-party-player-plug-inmacast--v06'>How to use third-party player plugin</h2>
             <ol start=''>
                 <li>Download the plugin you want from
-                    <el-link type="primary" href='https://github.com/xfangfang/Macast-plugins'>
-                        xfangfang/Macast-plugins
+                    <el-link type="primary" href='https://github.com/isdkz/Macast2-plugins'>
+                        isdkz/Macast-plugins
                     </el-link>
                 </li>
                 <li>Open the Macast, and click <code>Open Config Directory</code> in the setting menu</li>
@@ -95,7 +95,7 @@
             </ol>
             <p> if you can&#39;t find any plugin you want, check
                 <el-link type="primary"
-                         href='https://github.com/xfangfang/Macast/wiki/Custom-Renderer'>here
+                         href='https://github.com/isdkz/Macast2/wiki/Custom-Renderer'>here
                 </el-link>
                 to learn how to write a
                 custom renderer plug-in, and feel welcome to open a pull requests.
@@ -148,14 +148,14 @@
                     </tr>
                     <tr>
                         <td>Windows</td>
-                        <td><code>%HOMEPATH%\AppData\Local\xfangfang\Macast</code></td>
+                        <td><code>%HOMEPATH%\AppData\Local\isdkz\Macast</code></td>
                     </tr>
                     </tbody>
                 </table>
             </figure>
             <h2 id='language-support'>Language support</h2>
             <p>check the shell command in
-                <el-link type="primary" href='https://github.com/xfangfang/Macast/blob/main/docs/i18n.md'>docs/i18n.md
+                <el-link type="primary" href='https://github.com/isdkz/Macast2/blob/main/docs/i18n.md'>docs/i18n.md
                 </el-link>
                 ,
                 feel free to open a pull requests.
@@ -389,7 +389,7 @@
             },
             async load_repo_plugin() {
                 console.log('update plugin info')
-                let url = 'https://raw.githubusercontent.com/xfangfang/Macast-plugins/main/info.json'
+                let url = 'https://raw.githubusercontent.com/isdkz/Macast2-plugins/main/info.json'
                 return this.$http.get(url).then(res => {
                     this.repo_url = res.data.repo_url
                     this.repo_plugins = res.data.plugin_v1

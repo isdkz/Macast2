@@ -1,4 +1,4 @@
-# Copyright (c) 2021 by xfangfang. All Rights Reserved.
+# Copyright (c) 2025 by isdkz. All Rights Reserved.
 import json
 import os
 import re
@@ -1004,11 +1004,11 @@ class DLNAHandler(Handler):
     def build_description(self):
         self.description = load_xml(XMLPath.DESCRIPTION.value).format(
             friendly_name=Setting.get_friendly_name(),
-            manufacturer="xfangfang",
-            manufacturer_url="https://github.com/xfangfang",
+            manufacturer="isdkz",
+            manufacturer_url="https://github.com/isdkz",
             model_description="AVTransport Media Renderer",
             model_name="Macast",
-            model_url="https://xfangfang.github.io/Macast",
+            model_url="https://isdkz.github.io/Macast2",
             model_number=Setting.get_version(),
             uuid=Setting.get_usn(),
             serial_num=1024,
