@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4.2.2
 
       - uses: actions/download-artifact@v4
 
@@ -64,7 +64,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4.2.2
 
       - name: Install Requirement
         run: |
@@ -110,7 +110,7 @@ jobs:
           echo "::set-output name=status::success"
 
       - name: SSH connection to Actions
-        uses: P3TERX/ssh2actions@v1.0.0
+        uses: P3TERX/ssh2actions@main
         if: (github.event.inputs.ssh_ubuntu == 'true' && github.event.inputs.ssh_ubuntu  != 'false') || contains(github.event.action, 'ssh_ubuntu')
         env:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -134,7 +134,7 @@ jobs:
     runs-on: windows-2019
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4.2.2
 
       - name: Install Requirement
         run: |
@@ -178,7 +178,7 @@ jobs:
     runs-on: macos-11
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4.2.2
 
       - name: install create-dmg
         run: brew install create-dmg
@@ -208,7 +208,7 @@ jobs:
           echo "::set-output name=status::success"
 
       - name: SSH connection to Actions
-        uses: P3TERX/ssh2actions@v1.0.0
+        uses: P3TERX/ssh2actions@main
         if: (github.event.inputs.ssh_darwin == 'true' && github.event.inputs.ssh_darwin  != 'false') || contains(github.event.action, 'ssh_darwin')
         env:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -225,7 +225,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4.2.2
 
       - name: Install Requirement
         run: |
