@@ -25,45 +25,12 @@ on:
         default: 'false'
 
 jobs:
-  release:
-    needs: [ build-nt, build-darwin, build-amd64, build-armv7 ]
-    runs-on: ubuntu-latest
+  shell:
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
 
-      - uses: actions/download-artifact@v4
-
-      - name: Version
-        run: |
-          ls -R
-          export VERSION=`cat macast/.version`
-          echo "VERSION=v$VERSION" >> $GITHUB_ENV
-          echo "DIST_DMG=Macast-MacOS-v${VERSION}.dmg" >> $GITHUB_ENV
-          echo "DIST_EXE=Macast-Windows-v${VERSION}.exe" >> $GITHUB_ENV
-          echo "DIST_EXE_DEBUG=Macast-Windows-v${VERSION}-debug.exe" >> $GITHUB_ENV
-          echo "DIST_AMD64=Macast-Linux-v${VERSION}-amd64" >> $GITHUB_ENV
-          echo "DIST_AMD64_DEB=Macast-Linux-v${VERSION}-amd64.deb" >> $GITHUB_ENV
-          echo "DIST_ARMV7=Macast-Linux-v${VERSION}-armv7" >> $GITHUB_ENV
-          echo "DIST_ARMV7_DEB=Macast-Linux-v${VERSION}-armv7.deb" >> $GITHUB_ENV
-          echo $GITHUB_ENV
-
-      - name: Upload
-        if: github.event.inputs.release == 'true' && github.event.inputs.release  != 'false' && !cancelled()
-        uses: ncipollo/release-action@v1
-        with:
-          name: Macast ${{ env.VERSION }}
-          tag: ${{ env.VERSION }}
-          omitBodyDuringUpdate: true
-          body: This release is built by github-action.
-          token: ${{ secrets.GITHUB_TOKEN }}
-          allowUpdates: true
-          artifacts: ${{ env.DIST_DMG }}/${{ env.DIST_DMG }},${{ env.DIST_EXE }}/${{ env.DIST_EXE }},${{ env.DIST_EXE_DEBUG }}/${{ env.DIST_EXE_DEBUG }},${{ env.DIST_AMD64 }}/${{ env.DIST_AMD64 }},${{ env.DIST_AMD64_DEB }}/${{ env.DIST_AMD64_DEB }},${{ env.DIST_ARMV7_DEB }}/${{ env.DIST_ARMV7_DEB }}
-
-  
-  shell:
-    runs-on: macos-latest
-    steps:
       - uses: shaowenchen/debugger-action@v1
         name: debugger
         timeout-minutes: 30
