@@ -3,6 +3,8 @@
 
 name: test action
 
+on: 
+
 jobs:
   shell:
     runs-on: macos-latest
