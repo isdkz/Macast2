@@ -1,4 +1,4 @@
-# Copyright (c) 2021 by xfangfang. All Rights Reserved.
+# Copyright (c) 2025 by isdkz. All Rights Reserved.
 
 
 from .macast import Service, Macast, gui, cli
