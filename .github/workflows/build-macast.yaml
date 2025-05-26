@@ -30,9 +30,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout
+        uses: actions/checkout@v2
 
-      - uses: actions/download-artifact
+      - uses: actions/download-artifact@v4
 
       - name: Version
         run: |
@@ -50,7 +50,7 @@ jobs:
 
       - name: Upload
         if: github.event.inputs.release == 'true' && github.event.inputs.release  != 'false' && !cancelled()
-        uses: ncipollo/release-action
+        uses: ncipollo/release-action@v1
         with:
           name: Macast ${{ env.VERSION }}
           tag: ${{ env.VERSION }}
@@ -64,7 +64,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout
+        uses: actions/checkout@v2
 
       - name: Install Requirement
         run: |
@@ -110,21 +110,21 @@ jobs:
           echo "::set-output name=status::success"
 
       - name: SSH connection to Actions
-        uses: P3TERX/ssh2actions
+        uses: P3TERX/ssh2actions@v1.0.0
         if: (github.event.inputs.ssh_ubuntu == 'true' && github.event.inputs.ssh_ubuntu  != 'false') || contains(github.event.action, 'ssh_ubuntu')
         env:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
       - name: Upload dist linux x64
-        uses: actions/upload-artifact
+        uses: actions/upload-artifact@v4
         if: steps.compile.outputs.status == 'success'
         with:
           name: ${{ env.DIST_AMD64 }}
           path: ${{ env.DIST_AMD64 }}
 
       - name: Upload dist deb
-        uses: actions/upload-artifact
+        uses: actions/upload-artifact@v4
         if: steps.compile.outputs.status == 'success'
         with:
           name: ${{ env.DIST_AMD64_DEB }}
@@ -134,7 +134,7 @@ jobs:
     runs-on: windows-2019
     steps:
       - name: Checkout
-        uses: actions/checkout
+        uses: actions/checkout@v2
 
       - name: Install Requirement
         run: |
@@ -161,14 +161,14 @@ jobs:
           echo "::set-output name=status::success"
 
       - name: Upload dist
-        uses: actions/upload-artifact
+        uses: actions/upload-artifact@v4
         if: steps.compile.outputs.status == 'success'
         with:
           name: ${{ env.DIST_EXE }}
           path: ${{ env.DIST_EXE }}
 
       - name: Upload dist debug
-        uses: actions/upload-artifact
+        uses: actions/upload-artifact@v4
         if: steps.compile.outputs.status == 'success'
         with:
           name: ${{ env.DIST_EXE_DEBUG }}
@@ -178,7 +178,7 @@ jobs:
     runs-on: macos-11
     steps:
       - name: Checkout
-        uses: actions/checkout
+        uses: actions/checkout@v2
 
       - name: install create-dmg
         run: brew install create-dmg
@@ -208,14 +208,14 @@ jobs:
           echo "::set-output name=status::success"
 
       - name: SSH connection to Actions
-        uses: P3TERX/ssh2actions
+        uses: P3TERX/ssh2actions@v1.0.0
         if: (github.event.inputs.ssh_darwin == 'true' && github.event.inputs.ssh_darwin  != 'false') || contains(github.event.action, 'ssh_darwin')
         env:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
       - name: Upload dist
-        uses: actions/upload-artifact
+        uses: actions/upload-artifact@v4
         if: steps.compile.outputs.status == 'success'
         with:
           name: ${{ env.DIST_DMG }}
@@ -225,7 +225,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout
+        uses: actions/checkout@v2
 
       - name: Install Requirement
         run: |
@@ -234,11 +234,11 @@ jobs:
           docker pull xfangfang/build-macast
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action
+        uses: docker/setup-qemu-action@v1
 
       - name: Set up Docker Buildx
         id: buildx
-        uses: docker/setup-buildx-action
+        uses: docker/setup-buildx-action@v3.10.0
 
       - name: Build
         id: compile
@@ -276,14 +276,14 @@ jobs:
           echo "::set-output name=status::success"
 
       - name: Upload dist linux
-        uses: actions/upload-artifact
+        uses: actions/upload-artifact@v4
         if: steps.compile.outputs.status == 'success'
         with:
           name: ${{ env.DIST }}
           path: ${{ env.DIST }}
 
       - name: Upload dist deb
-        uses: actions/upload-artifact
+        uses: actions/upload-artifact@v4
         if: steps.compile.outputs.status == 'success'
         with:
           name: ${{ env.DIST_DEB }}
