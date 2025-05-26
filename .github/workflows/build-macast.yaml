@@ -190,8 +190,8 @@ jobs:
 
       - name: Install Requirement
         run: |
-          pip3 install -r requirements/darwin.txt
-          pip3 install py2app
+          python3 -m pip install -r requirements/darwin.txt
+          python3 -m pip install py2app
           wget https://laboratory.stolendata.net/~djinn/mpv_osx/mpv-latest.tar.gz
           mkdir -p bin && tar --strip-components 2 -C bin -xzvf mpv-latest.tar.gz mpv.app/Contents/MacOS
 
