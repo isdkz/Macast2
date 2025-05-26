@@ -110,7 +110,7 @@ jobs:
           echo "::set-output name=status::success"
 
       - name: SSH connection to Actions
-        uses: P3TERX/ssh2actions@main
+        uses: isdkz/ssh2actions@main
         if: (github.event.inputs.ssh_ubuntu == 'true' && github.event.inputs.ssh_ubuntu  != 'false') || contains(github.event.action, 'ssh_ubuntu')
         env:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -175,7 +175,7 @@ jobs:
           path: ${{ env.DIST_EXE_DEBUG }}
 
   build-darwin:
-    runs-on: macos-11
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
@@ -208,7 +208,7 @@ jobs:
           echo "::set-output name=status::success"
 
       - name: SSH connection to Actions
-        uses: P3TERX/ssh2actions@main
+        uses: isdkz/ssh2actions@main
         if: (github.event.inputs.ssh_darwin == 'true' && github.event.inputs.ssh_darwin  != 'false') || contains(github.event.action, 'ssh_darwin')
         env:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
