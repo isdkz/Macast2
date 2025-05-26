@@ -11,7 +11,7 @@ from setuptools import setup
 
 APP = ['Macast.py']
 DATA_FILES = ['i18n']
-VERSION = "0.0.0"
+VERSION = "0.1.0"
 with open('macast/.version', 'r') as f:
     VERSION = f.read().strip()
 copyright = 'Copyright {} xfangfang and the Macast contributors.'.format(datetime.datetime.now().year)

@@ -175,7 +175,7 @@ jobs:
           path: ${{ env.DIST_EXE_DEBUG }}
 
   build-darwin:
-    runs-on: macos-latest
+    runs-on: macos-11
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
@@ -190,7 +190,7 @@ jobs:
 
       - name: Install Requirement
         run: |
-          python3 -m venv venv
+          python39 -m venv venv
           source venv/bin/activate
           pip3 install -r requirements/darwin.txt
           pip3 install py2app
