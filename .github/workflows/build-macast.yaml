@@ -32,7 +32,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v2
 
       - name: Version
         run: |
