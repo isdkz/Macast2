@@ -3,21 +3,8 @@
 
 name: test action
 
-on:
+on: 
   workflow_dispatch:
-    inputs:
-      ssh_darwin:
-        description: 'SSH connection to Darwin'
-        required: false
-        default: 'false'
-      ssh_ubuntu:
-        description: 'SSH connection to Ubuntu'
-        required: false
-        default: 'false'
-      release:
-        description: 'Push a new release'
-        required: false
-        default: 'false'
 
 jobs:
   shell:

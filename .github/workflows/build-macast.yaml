@@ -4,10 +4,10 @@
 name: Build Macast
 
 on:
-  push:
-    branches:
-      - dev_test
-      - morelog
+  # push:
+  #   branches:
+  #     - dev_test
+  #     - morelog
   pull_request:
   workflow_dispatch:
     inputs:
