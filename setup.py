@@ -6,11 +6,7 @@ This is a setup.py script
 import sys
 from setuptools import setup, find_packages
 
-<<<<<<< Updated upstream
-VERSION = "0.1.0"
-=======
 VERSION = "0.1.4"
->>>>>>> Stashed changes
 with open('macast/.version', 'r') as f:
     VERSION = f.read().strip()
 LONG_DESCRIPTION = ""
