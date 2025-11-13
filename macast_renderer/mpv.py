@@ -301,6 +301,12 @@ class MPVRenderer(Renderer):
                     self.ipc_sock.connect(self.mpv_sock)
                 cherrypy.engine.publish('mpvipc_start')
                 cherrypy.engine.publish('renderer_start')
+
+
+
+
+
+
                 data = {"command": ['get_property', 'mpv-version']}
                 msg = json.dumps(data) + '\n'
                 self.ipc_sock.send_bytes(msg.encode())
