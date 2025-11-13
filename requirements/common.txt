@@ -4,6 +4,5 @@ lxml
 pillow
 requests
 psutil
-packaging
 git+https://github.com/isdkz/pystray.git
 git+https://github.com/isdkz/pyperclip.git

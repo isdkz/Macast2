@@ -1,5 +1,4 @@
 appdirs
-packaging
 cherrypy
 lxml
 requests
