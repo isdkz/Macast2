@@ -6,14 +6,14 @@ This is a setup.py script
 import sys
 from setuptools import setup, find_packages
 
-VERSION = "0.1.4"
+VERSION = "0.1.5"
 with open('macast/.version', 'r') as f:
     VERSION = f.read().strip()
 LONG_DESCRIPTION = ""
 with open('README.md', 'r', encoding='utf-8') as f:
     LONG_DESCRIPTION = f.read()
 OPTIONS = {}
-INSTALL = ["requests", "appdirs", "cherrypy", "lxml", "psutil", "pywin32"]
+INSTALL = ["requests", "appdirs", "cherrypy", "lxml", "psutil", "pywin32", "packaging"]
 PACKAGES = find_packages()
 
 if sys.platform == 'darwin':

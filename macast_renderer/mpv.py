@@ -15,6 +15,7 @@ import threading
 import cherrypy
 import gettext
 from enum import Enum
+from packaging import version
 
 from macast.utils import Setting
 from macast.renderer import Renderer, RendererSetting
@@ -27,6 +28,7 @@ if os.name == 'nt':
 logger = logging.getLogger("MPVRenderer")
 logger.setLevel(logging.INFO)
 
+loadfile_change_version = version.parse('0.38.0')
 
 class ObserveProperty(Enum):
     volume = 1
@@ -74,6 +76,7 @@ class MPVRenderer(Renderer):
         # one second to restart MPV.
         self.command_lock = threading.Lock()
         self.renderer_setting = MPVRendererSetting()
+        self.mpv_version_large_38 = False
 
     def set_media_stop(self):
         self.send_command(['stop'])
@@ -254,6 +257,11 @@ class MPVRenderer(Renderer):
     def send_command(self, command):
         """Sending command to mpv
         """
+        if (command[0] == 'loadfile' and len(command) >= 4
+            and self.mpv_version_large_38
+        ):
+            command.insert(3, -1)
+
         logger.debug("send command: " + str(command))
         data = {"command": command}
         msg = json.dumps(data) + '\n'
@@ -298,6 +306,16 @@ class MPVRenderer(Renderer):
             except Exception as e:
                 logger.error("mpv ipc socket reconnecting: {}".format(str(e)))
                 continue
+            try:
+                data = {"command": ['get_property', 'mpv-version']}
+                msg = json.dumps(data) + '\n'
+                self.ipc_sock.send_bytes(msg.encode())
+                res = json.loads(self.ipc_sock.recv_bytes().split(b'\n')[0].decode())
+                mpv_version = version.parse(res['data'].split()[-1].split('-')[0])
+                if mpv_version >= loadfile_change_version:
+                    self.mpv_version_large_38 = True
+            except Exception as e:
+                logger.error("get mpv version: {}".format(str(e)))
             res = b''
             msgs = None
             while self.ipc_running:
