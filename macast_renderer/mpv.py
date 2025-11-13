@@ -301,12 +301,6 @@ class MPVRenderer(Renderer):
                     self.ipc_sock.connect(self.mpv_sock)
                 cherrypy.engine.publish('mpvipc_start')
                 cherrypy.engine.publish('renderer_start')
-                self.ipc_once_connected = True
-                self.set_observe()
-            except Exception as e:
-                logger.error("mpv ipc socket reconnecting: {}".format(str(e)))
-                continue
-            try:
                 data = {"command": ['get_property', 'mpv-version']}
                 msg = json.dumps(data) + '\n'
                 self.ipc_sock.send_bytes(msg.encode())
@@ -314,8 +308,11 @@ class MPVRenderer(Renderer):
                 mpv_version = version.parse(res['data'].split()[-1].split('-')[0])
                 if mpv_version >= loadfile_change_version:
                     self.mpv_version_large_38 = True
+                self.ipc_once_connected = True
+                self.set_observe()
             except Exception as e:
-                logger.error("get mpv version: {}".format(str(e)))
+                logger.error("mpv ipc socket reconnecting: {}".format(str(e)))
+                continue
             res = b''
             msgs = None
             while self.ipc_running:
